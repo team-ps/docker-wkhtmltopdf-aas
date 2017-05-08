@@ -15,6 +15,10 @@ from executor import execute
 
 @Request.application
 def application(request):
+
+    if request.method == 'GET' and request.path == '/healthz':
+        return Response("ok")
+
     """
     To use this application, the user must send a POST request with
     base64 or form encoded encoded HTML content and the wkhtmltopdf Options in

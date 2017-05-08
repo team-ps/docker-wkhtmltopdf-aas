@@ -1,8 +1,9 @@
 FROM openlabs/docker-wkhtmltopdf:latest
-MAINTAINER Sharoon Thomas <sharoon.thomas@openlabs.co.in>
 
-# Install dependencies for running web service
-RUN apt-get install -y python-pip
+RUN apt-get update && \
+    apt-get install -y python-pip && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN pip install werkzeug executor gunicorn
 
 ADD app.py /app.py
