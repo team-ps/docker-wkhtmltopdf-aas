@@ -1,5 +1,5 @@
-image = wkhtmltopdf-aas 
-registry = eu.gcr.io/dauntless-nova-163713
+image = wkhtmltopdf-aas
+registry = eu.gcr.io/phoenix-k8s
 
 build:
 	docker build -t local/$(image) .
